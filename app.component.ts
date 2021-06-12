@@ -1,31 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { clear } from 'console';
+import { Button } from 'protractor';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  // zmienna globalna dla komponentu
-  title = 'projekt1';
-  inputText = 'Nowa nazwa ';
-  zmienKolor = 'color-black';
+export class AppComponent {
+  imie = '';
+  nazwisko = '';
+  wiek = 18;
+  list = [];
 
-  isDisabled = true;
-  logo = '';
-  htmlContent = '';
-
-  ngOnInit(): void { }
-
-  zmienUstawienia() {
-  this.inputText = 'tekst zmieniony';
-  this.zmienKolor = 'color-brown';
-  this.isDisabled = false;
-  this.logo = 'https://angular.io/assets/images/logos/angular/logonav@2x.png';
-  this.htmlContent = 'Mateusz Mróz';
+  listaUczniow(){
+    this.list.push(this.imie);
+    this.list.push(this.nazwisko);
+    this.list.push(this.wiek);
   }
+clear(){
+  this.imie = '';
+  this.nazwisko = '';
+  this.wiek = 18;
 
-  getClass(){
-    return this.zmienKolor;
-  }
- }
-
+}
+}

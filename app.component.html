@@ -1,13 +1,31 @@
-<h3 [className]="zmienKolor">Wprowadzenie do Angulara</h3>
-<img [src]="logo">
+<div>
+<h3>Użycie ngModel</h3>
+<p>Imię,nazwisko oraz wiek ucznia to: {{ imie }}</p>
 <br>
-<input [value]="inputText"> {{ inputText }}
+<label for="student">imię: </label>
+<input [(ngModel)]="imie"> {{ imie }}
 <br><br>
+<label for="student">nazwisko: </label>
+<input [(ngModel)]="nazwisko"> {{ nazwisko }}
+<br><br>
+<label for="student">wiek: </label>
+<input [(ngModel)]="wiek"> {{ wiek }}
+<br><br>
+</div>
 
-<div><button class="btn"  [disabled]="isDisabled">nieedytowalny</button>
 
-<button class="btn2" (click)="zmienUstawienia()">edytowalny</button></div>
+<button (click) = "clear()">Wyczysc pola  </button>
+<div>
+<button (click)="listaUczniow()">Lista uczniow </button>
+<br>
+<output >Dane ucznia: <br>
+  <ul   *ngFor="let student of list" >
+    <span>Imie: {{imie}}</span> <br>
+    <span>Nazwisko: {{nazwisko}}</span><br>
+    <span>Wiek: {{wiek}}</span><br>
+    <span *ngIf="i !== 0" break;></span>
+  </ul>
+</output>
+</div>
 
-<i><b>><p [innerHTML]="htmlContent"></p></b></i>
 
-<h3 [ngClass]="getClass()">To jest ostatnie zadanie na dziś</h3>
