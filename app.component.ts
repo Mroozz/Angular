@@ -1,40 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent implements OnInit {
+  // zmienna globalna dla komponentu
+  title = 'projekt1';
+  inputText = 'Nowa nazwa ';
+  zmienKolor = 'color-black';
 
-title = 'Dni tygodnia';
+  isDisabled = true;
+  logo = '';
+  htmlContent = '';
 
-dniTygodnia = [
-  'poniedziałek',
-  'wtorek',
-  'środa',
-  'czwartek',
-  'piątek',
-  'sobota',
-  'niedziala'
-  ];
+  ngOnInit(): void { }
 
-  stanAplikacji = ['start', 'koniec'];
-
-  osoba = new Osoba('Jan Nowak', 30, false);
-  o1 = new Osoba('Jerzy Antryk', 18, false);
-  o2 = new Osoba('Adam Krite', 61, false);
-  o3 = new Osoba('Alicja Eradr', 20, true);
-
-
-  spisLudnosci = [this.osoba, this.o1, this.o2, this.o3];
-
-}
-
-
-class Osoba{
-    constructor(public imie: string, public wiek: number, public statusStudenta: boolean) {}
+  zmienUstawienia() {
+  this.inputText = 'tekst zmieniony';
+  this.zmienKolor = 'color-brown';
+  this.isDisabled = false;
+  this.logo = 'https://angular.io/assets/images/logos/angular/logonav@2x.png';
+  this.htmlContent = 'Mateusz Mróz';
   }
 
-
-
+  getClass(){
+    return this.zmienKolor;
+  }
+ }
 

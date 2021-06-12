@@ -1,34 +1,13 @@
-<h3>{{ title }}</h3>
-<ul>
- <li *ngFor="let dzien of dniTygodnia; let i = index; let first = first; let last = last;
- let odd = odd; let even = even;" [class.odd]="odd" [class.even]="even" >
+<h3 [className]="zmienKolor">Wprowadzenie do Angulara</h3>
+<img [src]="logo">
+<br>
+<input [value]="inputText"> {{ inputText }}
+<br><br>
 
-  {{i}}.{{ dzien }}
- <span *ngIf="odd === true"> - dni nieparzyste.</span>
- <span *ngIf="even === true"> - dni parzyste. </span>
- <span *ngIf="first === true"> Początek tygodnia  </span>
- <span *ngIf="last === true"> Koniec tygodnia  </span>
+<div><button class="btn"  [disabled]="isDisabled">nieedytowalny</button>
 
-</li>
-</ul>
+<button class="btn2" (click)="zmienUstawienia()">edytowalny</button></div>
 
+<i><b>><p [innerHTML]="htmlContent"></p></b></i>
 
-
-
-<div *ngIf="stanAplikacji[1]"> {{stanAplikacji[1]}} </div>
-
-
-<h3>WYSWIETLANIE OSOB</h3>
-
-<div *ngFor="let Osoba of spisLudnosci; let i = index">
-  <div [ngSwitch]="Osoba">
-  <div *ngSwitchCase="'this.osoba'">{{ i + 1 }} {{this.osoba | json}}</div>
-  <div *ngSwitchCase="'this.o1'">{{ i + 1 }} {{this.o1 | json}} </div>
-  <div *ngSwitchCase="'this.o2'">{{ i + 1 }} {{this.o2 | json}} </div>
-  <div *ngSwitchCase="'this.o3'">{{ i + 1 }} {{Osoba | json}}</div>
-  <div *ngSwitchDefault>{{ i + 1 }} {{Osoba | json}}</div>
-  </div>
- </div>
-
-
-
+<h3 [ngClass]="getClass()">To jest ostatnie zadanie na dziś</h3>
