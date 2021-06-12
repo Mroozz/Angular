@@ -1,0 +1,6 @@
+<p>{{this.title}}</p>
+<ul *ngIf="samochodyItems">
+ <li *ngFor="let samochod of samochodyItems; let i = index">
+ {{ i + 1 }} {{ samochod | json }}
+ </li>
+</ul>
