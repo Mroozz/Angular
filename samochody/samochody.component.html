@@ -1,0 +1,19 @@
+<p>Samochody:</p>
+<ul>
+ <li *ngFor="let samochod of samochodyItems; let i = index">
+ {{ i + 1 }} {{ samochod | json }}
+ <button (click)="usunSamochod(i)">Usuń</button>
+ </li>
+</ul>
+<br>
+<label>Podaj samochod </label>
+<div>
+<br>
+<input [(ngModel)]="this.marka">Marka
+<br>
+<input [(ngModel)]="this.model">Model
+<br>
+<input [(ngModel)]="this.rok">Rok
+<br>
+<button (click)="dodajSamochod()">Dodaj samochod</button>
+</div>

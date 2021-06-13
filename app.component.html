@@ -1,2 +1,9 @@
-<app-studenci-view [studenciItems]="studenci"></app-studenci-view>
-<app-samochody [samochodyItems]="samochody"></app-samochody>
+<app-samochody
+  [samochodyItems]="samochody"
+    (addSamochod)="onAddSamochod($event)"
+    (minusSamochod)="onMinusSamochod($event)">
+</app-samochody>
+
+<div *ngIf="isCreated" [ngStyle]="{color: 'red'}">Student już istnieje!</div>
+
+
